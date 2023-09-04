@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QProcess>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -22,8 +24,11 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     QStringList files;
+    QString newPath;
 };
 #endif // MAINWINDOW_H
