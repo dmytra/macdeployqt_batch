@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1067</width>
+    <height>628</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,23 +18,46 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>10</y>
-      <width>100</width>
+      <y>50</y>
+      <width>141</width>
       <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>add files in table</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
-      <width>761</width>
-      <height>501</height>
+      <y>90</y>
+      <width>1031</width>
+      <height>471</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>821</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>161</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>open macdeployqt file</string>
     </property>
    </widget>
   </widget>
@@ -43,7 +66,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1067</width>
      <height>22</height>
     </rect>
    </property>

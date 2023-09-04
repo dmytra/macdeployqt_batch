@@ -20,10 +20,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
-//    void createUI(const QStringList &headers);
-    void createUIi(const QString aa);
-    QStringList files;           // Путьi сохранения файла
+    QStringList files;
 };
 #endif // MAINWINDOW_H
