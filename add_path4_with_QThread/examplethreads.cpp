@@ -1,8 +1,14 @@
 #include "examplethreads.h"
+#include "mainwindow.h"
 #include <QDebug>
 
-ExampleThreads::ExampleThreads(QString threadName) :
-    name(threadName)
+ExampleThreads::ExampleThreads(QString threadName, int i, QString program, QStringList arguments) :
+    toName(threadName), index(i), toProgram(program), toArguments(arguments)
+{
+
+}
+
+ExampleThreads::~ExampleThreads()
 {
 
 }
@@ -11,22 +17,16 @@ void ExampleThreads::run()
 {
     QProcess *myProcess = new QProcess();
 
-    // /Users/srtsrthwqethqerthsrthwryjwrtsdflly/Qt/6.2.4/macos/bin/macdeployqt
-    // /Users/srtsrthwqethqerthsrthwryjwrtsdflly/Downloads/Bike_Parking_By_CppBuzz.app
-    QStringList arguments;
-
-//    if(ui->checkBox->isChecked() == 1) {
-//        arguments << "/Users/srtsrthwqethqerthsrthwryjwrtsdflly/Downloads/Bike_Parking_By_CppBuzz.app" << "-dmg";
-//    }
-//    else
-//    {
-//        arguments << "/Users/srtsrthwqethqerthsrthwryjwrtsdflly/Downloads/Bike_Parking_By_CppBuzz.app";
-//    }
-
-    arguments << "/Users/srtsrthwqethqerthsrthwryjwrtsdflly/Downloads/Bike_Parking_By_CppBuzz.app" << "-dmg";
-
-    myProcess->start("/Users/srtsrthwqethqerthsrthwryjwrtsdflly/Qt/6.2.4/macos/bin/macdeployqt", arguments);
+    myProcess->start(toProgram, toArguments);
     myProcess->waitForStarted();
 
-    qDebug() << "/Users/srtsrthwqethqerthsrthwryjwrtsdflly/Qt/6.2.4/macos/bin/macdeployqt" << " " << arguments << Qt::endl;
+    qDebug() << toProgram << " " << toArguments << Qt::endl;
+
+    if (!myProcess->waitForFinished())
+        qDebug() << "Make failed:" ;//<< myProcess->errorString();
+    else
+    {
+        qDebug() << "Make output: " << toName << " " << index;//<< myProcess->readAll();
+    }
+
 }

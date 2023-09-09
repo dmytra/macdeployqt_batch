@@ -102,32 +102,26 @@ void MainWindow::on_pushButton_3_clicked()
 //            myProcess->start(program, arguments);
 //            myProcess->waitForStarted(1111);
 
-            ExampleThreads *threadA = new ExampleThreads("thread A");
+            ExampleThreads *threadA = new ExampleThreads("thread A", i, program, arguments);
 
-
-
-                threadA->start();    // Run threads
-
+            threadA->start();    // Run threads
 
             QTableWidgetItem* item = new QTableWidgetItem();
-            item->setText("OK");
+            item->setText("run");
 
             ui->tableWidget->setItem(i,1, item);
 
             QTableWidgetItem* item2 = new QTableWidgetItem();
             if(ui->checkBox->isChecked() == 1) {
-            item2->setText("OK");
+            item2->setText("run");
             }
             else
             {
             item2->setText("---");
             }
             ui->tableWidget->setItem(i,2, item2);
-//            QString ret = myProcess->readAllStandardOutput().simplified();
-//            myProcess->waitForFinished();
 
             i++;
             }
 
 }
-
