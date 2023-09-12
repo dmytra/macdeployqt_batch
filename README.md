@@ -1,4 +1,4 @@
-ПАКЕТНАЯ ОБРАБОТКА macdeployqt и созданией -dmg
+ПАКЕТНАЯ ОБРАБОТКА macdeployqt и создание -dmg
 
 # macdeployqt_batch
 
